@@ -1,0 +1,195 @@
+# *****************
+# This .yaml config file contains all information for the presentation and
+# and analysis of a questionnaire during an experiment :
+# - metadata information  (title, refs, version, etc.)
+# - blocs / items info and sequencing info (content of the questionnaire for presentation)
+# - score information:
+#
+# Format:
+# questionnaires are organized as follows:
+# - bloc X
+#   - instructions bloc X
+#   - items A, B, C
+# - bloc Y
+#   - instructions bloc Y
+#   - items D, E, F, G
+# - ...
+#
+# each bloc defines a set of items / questions with given instructions and scale.
+# bloc order can be set or randomized, same applied for items order within bloc.
+# # Notes:
+#   /!\ YAML config files use Python-like indentations to represent levels in data,
+#   therefore you should pay special attention to spaces !
+# *****************
+
+
+# --- metadata information about the questionnaire
+META:
+  title: DFS                  # (str) short name / abbreviation of the questionnaire
+  fullName: Dispositional Flow Scale  # (str) full name of the questionnaire
+  reference:                  # list of references for this questionnaire
+    - "Jackson, S. A., & Eklund, R. C. (2002). Assessing flow in physical activity: the flow state scale-2 and dispositional flow scale-2. Journal of sport & exercise psychology, 24(2)."
+  version: 1.0        # version tag for retrocompatibility
+
+# --- infos questionnaire blocs
+BLOCS:
+  - bloc_id: X            #(str) id of this bloc
+    item_order : ordered  #(str) item orders within that bloc, can be 'ordered' (following item ids) or 'random'
+    instructions: "Ton expérience vécue.
+    Lis attentivement les phrases suivantes.
+    Indique à quel point chacune d’elle te correspond en cochant la case appropriée :"
+    scale: lickert-7      # (str) type of scale for all items in this bloc, can be 'lickert-n', 'continuous_slider', 'image_choice', etc. (to be implemented)
+    scale_legend:         # (str list) legend for each step of the scale (list with length n, can have empty elements)
+      - pas du tout d’accord
+      - très peu d’accord
+      - un peu d’accord
+      - moyennement d’accord
+      - assez d’accord
+      - fortement d’accord
+      - tout à fait d’accord
+
+# --- infos questionnaire items
+ITEMS:
+  - item_id: S01       # (str) item id
+    bloc_id: X         # (str) bloc id
+    question: "C'était exigeant, mais je crois que mes compétences m’ont permis de relever le défi." # (str) name of scene or questionaire, can be a single item (itemX), or an item list [itemY, itemX]
+  - item_id: A02
+    bloc_id: X
+    question: "J’ai fait les bonnes actions sans essayer d'y penser."
+  - item_id: G03
+    bloc_id: X
+    question: "Je savais clairement ce que je voulais faire."
+  - item_id: U04
+    bloc_id: X
+    question: "Pour moi c'était clair ; je savais comment les actions allaient s'enchaîner."
+  - item_id: C05
+    bloc_id: X
+    question: "J’étais entièrement concentré(e) sur ce que je faisais."
+  - item_id: O06
+    bloc_id: X
+    question: "J'avais l'impression de contrôler ce que je faisais."
+  - item_id: L07
+    bloc_id: X
+    question: "Je n’étais pas préoccupé(e) par ce que les autres auraient pu penser de moi."
+  - item_id: T08
+    bloc_id: X
+    question: "Ma notion du temps était différente (plus rapide ou plus lente que d'habitude)."
+  - item_id: X09
+    bloc_id: X
+    question: "J’ai vraiment aimé cette expérience."
+  - item_id: S10
+    bloc_id: X
+    question: "Mes capacités étaient à la hauteur du défi élevé de la situation."
+  - item_id: A11
+    bloc_id: X
+    question: "Je faisais les bonnes actions de façon automatique."
+  - item_id: G12
+    bloc_id: X
+    question: "J’avais une vision très claire de ce que je voulais faire. "
+  - item_id: U13
+    bloc_id: X
+    question: "J’étais conscient(e) de la qualité de mes actions."
+  - item_id: C14
+    bloc_id: X
+    question: "J'arrivais bien à rester concentré(e) sur ce qui se passait."
+  - item_id: O15
+    bloc_id: X
+    question: "Je sentais que je pouvais contrôler ce que je faisais."
+  - item_id: L16
+    bloc_id: X
+    question: "Je n’étais pas préoccupé(e) par le jugement des autres."
+  - item_id: T17
+    bloc_id: X
+    question: "Le temps semblait s'écouler de façon différente que d'habitude."
+  - item_id: X18
+    bloc_id: X
+    question: "J'ai aimé les sensations liées à la maîtrise de mes compétences et je veux encore les ressentir."
+  - item_id: S19
+    bloc_id: X
+    question: "Je me sentais capable de faire face aux exigences élevées de la situation. "
+  - item_id: A20
+    bloc_id: X
+    question: "J'agissais de manière fluide sans trop y penser."
+  - item_id: G21
+    bloc_id: X
+    question: "Je voulais atteindre un but précis."
+  - item_id: U22
+    bloc_id: X
+    question: "Je savais ce que je faisais pendant l'activité. "
+  - item_id: C23
+    bloc_id: X
+    question: "J’étais complètement concentré(e). "
+  - item_id: O24
+    bloc_id: X
+    question: "J'avais une impression de contrôle total."
+  - item_id: L25
+    bloc_id: X
+    question: "Je n’étais pas préoccupé(e) par mon apparence."
+  - item_id: T26
+    bloc_id: X
+    question: "J'avais l'impression que le temps passait rapidement."
+  - item_id: X27
+    bloc_id: X
+    question: "Cette expérience m’a donné(e) beaucoup de plaisir."
+  - item_id: S28
+    bloc_id: X
+    question: "Mes compétences étaient à la hauteur de ce défi élevé."
+  - item_id: A29
+    bloc_id: X
+    question: "Je faisais les choses spontanément et automatiquement, sans avoir à réfléchir."
+  - item_id: G30
+    bloc_id: X
+    question: "Mes objectifs étaient clairement définis."
+  - item_id: U31
+    bloc_id: X
+    question: "J’étais capable d'évaluer la qualité de ma performance."
+  - item_id: C32
+    bloc_id: X
+    question: "J’étais complètement concentré(e) sur ce que je faisais."
+  - item_id: O33
+    bloc_id: X
+    question: "Je sentais que je contrôlais parfaitement mes actions."
+  - item_id: L34
+    bloc_id: X
+    question: "Je n’étais pas préoccupé(e) par ce que les autres pouvaient penser de moi."
+  - item_id: T35
+    bloc_id: X
+    question: "J’ai perdu ma notion habituelle du temps."
+  - item_id: X36
+    bloc_id: X
+    question: "J’ai trouvé cette expérience extrêmement valorisante."
+
+# --- infos questionnaire sequencing
+SEQUENCE:
+  bloc_order:     #(str) order of bloc presentation, can be left empty (just one bloc), can be 'ordered' (following order in this file) or 'random'
+
+
+# --- infos score calculation
+SCORES:
+  - score_id: challenge_skill_balance # (str) name of the psychometric score / dimension
+    calculation: S01+S10+S19+S28  # (str) math expression using item ids (e.g., 2*A - 4*B + 1.5C )
+    notes:                    # (str) any relevant information (can be left empty)
+  - score_id: action_awareness
+    calculation: A02+A11+A20+A29
+    notes:
+  - score_id: clear_goals
+    calculation: G03+G12+G21+G30
+    notes:
+  - score_id: unambiguous_feedback
+    calculation: U04+U13+U22+U31
+    notes:
+  - score_id: concentration
+    calculation: C05+C14+C23+C32
+    notes:
+  - score_id: sense_of_control
+    calculation: O06+O15+O24+O33
+    notes:
+  - score_id: loss_self_consciousness
+    calculation: L07+L16+L25+L34
+    notes:
+  - score_id: time_transformation
+    calculation: T08+T17+T26+T35
+    notes:
+  - score_id: autotelic_experience
+    calculation: X09+X18+X27+X36
+    notes:

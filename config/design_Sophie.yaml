@@ -1,0 +1,69 @@
+# *****************
+# This .yaml script contains all information needed to run a VR experiment
+# using XR-echo and ensure integration with Python analysis toolbox.
+#
+# Notes:
+#   /!\ YAML config files use Python-like indentations to represent levels in data,
+#   therefore you should pay special attention to spaces !
+# *****************
+
+
+# --- metadata information about the experiment
+META:
+  experiment_title: portrait_sophie  # (str) name of the experiment
+  passation_site:             # (str) list of experiment recording locations
+    - INSA Lyon
+    - ENISE (Saint-Etienne)
+  nb_participant_expected: 25 # (int) desired number of participants (used for latin square randomization across participants)
+  config_version: 1.0          # (int) version tag for this config file (helps for retrocompatibility)
+
+# --- information about experiment structure (experimental design)
+DESIGN:
+
+  # definition of all questionnaires used in this experiment
+  questionnaires:
+    - demographics  # (str) questionnaire title (same as defined in pyquest_title.yaml)
+    - gaming
+    - FPT
+    - DFS
+    - TPI
+
+  # definition of experimental conditions and their associated scenes
+  structure:
+    - condition: Aesthetic    # (str) name of this condition
+      scene:                  # (str) list of scene names within that condition (different scenes may have identical names accross conditions)
+        - Tutorial
+        - HouseAestheticBase
+        - HouseAestheticSpace
+        - PostApo
+    - condition: Narrative
+      scene:
+        - Tutorial
+        - HouseNarrative
+    - condition: Goals
+      scene:
+        - Tutorial
+        - HouseObjectives
+
+  # definition of experiment sequencing
+  experiment_sequence:
+    - step: 1                   # (int) current step (number)
+      element: questionnaires   # (str) name of element, can be: 'questionnaire' or 'condition' or 'scene' (within a condition)
+      item: [demographics,FPT,gaming]  # (str) name of scene or questionaire, can be a single item (itemX), or an item list [itemY, itemX], when this is let empty all possible items from this element are considered
+      order: ordered            # (str, optional) sequence order, can be empty (single element), 'ordered' (same sequence as item list above), 'random' (full randomization), or 'latin_square' (restricted randomization)
+      content:                  # (str, optional) use this when creating a sequence subset within each item above (e.g., multiple steps within a single condition) -> /!\ only works for conditions
+    - step: 2
+      element: condition
+      item: [Aesthetic,Narrative,Goals]
+      order: latin_square
+      content:
+      - step: 2a            # sequence subset within each condition above
+        element: scene
+        item:
+        order: ordered
+        content:
+      - step: 2b
+        element: questionnaires
+        item: [DFS,TPI]
+        order: ordered
+        content:

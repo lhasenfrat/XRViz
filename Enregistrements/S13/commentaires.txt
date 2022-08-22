@@ -1,0 +1,3 @@
+1ère scène: Ecouteurs mal mis jusqu'à scène PostApo, manque les metadata j'ai donc rajouté le log qui les contient
+2ème scène: Eye-tracking non fonctionnel
+3ème scène: Impossible de connecter le Shimmer...

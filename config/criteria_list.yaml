@@ -1,0 +1,117 @@
+PROFILING:
+  DFS_scores:
+    action_awareness:
+      from: 5
+      to: 28
+      type: numeric_range
+    autotelic_experience:
+      from: 13
+      to: 28
+      type: numeric_range
+    challenge_skill_balance:
+      from: 4
+      to: 28
+      type: numeric_range
+    clear_goals:
+      from: 4
+      to: 28
+      type: numeric_range
+    concentration:
+      from: 9
+      to: 28
+      type: numeric_range
+    loss_self_consciousness:
+      from: 4
+      to: 28
+      type: numeric_range
+    sense_of_control:
+      from: 6
+      to: 28
+      type: numeric_range
+    time_transformation:
+      from: 4
+      to: 28
+      type: numeric_range
+    unambiguous_feedback:
+      from: 8
+      to: 28
+      type: numeric_range
+  FPT_scores:
+    aesthetic:
+      from: 44
+      to: 100
+      type: numeric_range
+    challenge:
+      from: 24
+      to: 90
+      type: numeric_range
+    goal:
+      from: 17
+      to: 94
+      type: numeric_range
+    narrative:
+      from: 40
+      to: 100
+      type: numeric_range
+    social:
+      from: 7
+      to: 100
+      type: numeric_range
+  TPI_scores:
+    engagement:
+      from: 2.83333333333333
+      to: 7.0
+      type: numeric_range
+  demographics:
+    age:
+      from: 18
+      to: 27
+      type: numeric_range
+    gender:
+      list:
+      - Femme
+      - Autre
+      - Homme
+      - Ne se prononce pas
+      type: string_list
+  experimental:
+    condition:
+      list:
+      - Goals
+      - Aesthetic
+      - Narrative
+      type: string_list
+    condition_order:
+      list:
+      - 1
+      - 2
+      - 3
+      type: string_list
+    passation_site:
+      list:
+      - INSA Lyon
+      - ENISE (Saint-Etienne)
+      type: string_list
+    profiling_index:
+      from: 0
+      to: 104
+      type: numeric_range
+    subject_id:
+      from: 7
+      to: 56
+      type: numeric_range
+  gaming:
+    videogame_practice:
+      list:
+      - Tous les jours
+      - Jamais
+      - Occasionnellement
+      - Régulièrement
+      type: string_list
+    vr_mastery:
+      list:
+      - 'Débutant(e) : Je n''ai jamais (ou très peu) utilisé la réalité virtuelle'
+      - 'Expert(e) : Je suis développeur(se) et/ou chercheur(se) en réalité virtuelle'
+      - 'Initié(e) : J''ai déjà utilisé la réalité virtuelle plusieurs fois'
+      - 'Confirmé(e) : J''utilise la réalité virtuelle de manière régulière'
+      type: string_list

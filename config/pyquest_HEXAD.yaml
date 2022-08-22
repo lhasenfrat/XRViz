@@ -1,0 +1,151 @@
+# *****************
+# This .yaml config file contains all information for the presentation and
+# analysis of a questionnaire during an experiment :
+# - metadata information  (title, refs, version, etc.)
+# - blocs / items info and sequencing info (content of the questionnaire for presentation)
+# - score information:
+#
+# Format:
+# questionnaires are organized as follows:
+# - bloc X
+#   - instructions bloc X
+#   - items A, B, C
+# - bloc Y
+#   - instructions bloc Y
+#   - items D, E, F, G
+# - ...
+#
+# each bloc defines a set of items / questions with given instructions and scale.
+# bloc order can be set or randomized, same applied for items order within bloc.
+# # Notes:
+#   /!\ YAML config files use Python-like indentations to represent levels in data,
+#   therefore you should pay special attention to spaces !
+# *****************
+
+
+# --- metadata information about the questionnaire
+META:
+  title: HEXAD        # (str) short name / abbreviation of the questionnaire
+  fullName: HEXAD / Gamification User Types   # (str) full name of the questionnaire
+  reference:          # list of references for this questionnaire
+    - "Tondello, G. F., Wehbe, R. R., Diamond, L., Busch, M., Marczewski, A., & Nacke, L. E. (2016, October). The gamification user types hexad scale. In Proceedings of the 2016 annual symposium on computer-human interaction in play (pp. 229-243)."
+  version: 1.0        # version tag for retrocompatibility
+
+# --- infos questionnaire blocs
+BLOCS:
+  - bloc_id: X               #(str) id of this bloc
+    item_order : random  #(str) item orders within that bloc, can be 'ordered' (following item index) or 'random'
+    instructions: "Tes préférences de jeux.
+    Lis attentivement les phrases suivantes.
+    Indique à quel point chacune d’elle te correspond en cochant la case appropriée :"
+    scale: lickert-7      # (str) type of scale for all items in this bloc, can be 'text_free, 'text_choice', 'lickert-n', 'continuous_slider', 'image_choice', etc. (to be implemented)
+    scale_legend:         # (str list) legend for each step of the scale (list with length n, can have empty elements)
+      - pas du tout d’accord
+      - très peu d’accord
+      - un peu d’accord
+      - moyennement d’accord
+      - assez d’accord
+      - fortement d’accord
+      - tout à fait d’accord
+
+# --- infos questionnaire items
+ITEMS:
+  - item_id: A3       # (str) item index
+    bloc_id: X         # (str) bloc index
+    question: "J'ai du mal à arrêter de chercher un problème avant d'avoir trouvé la solution" # (str) name of scene or questionaire, can be a single item (itemX), or an item list [itemY, itemX]
+  - item_id: A2
+    bloc_id: X
+    question: "J’ai besoin de finir ce que j’ai commencé"
+  - item_id: A4
+    bloc_id: X
+    question: "J'aime les tâches difficiles"
+  - item_id: A1
+    bloc_id: X
+    question: "J'aime surmonter des obstacles"
+  - item_id: D4
+    bloc_id: X
+    question: "Je n'aime pas suivre les règles"
+  - item_id: D2
+    bloc_id: X
+    question: "J'aime remettre en question les consignes"
+  - item_id: D3
+    bloc_id: X
+    question: "Je me considère comme rebelle de nature"
+  - item_id: D1
+    bloc_id: X
+    question: "J'aime provoquer"
+  - item_id: F3
+    bloc_id: X
+    question: "J'aime essayer de nouvelles choses"
+  - item_id: F4
+    bloc_id: X
+    question: "J’aime être indépendant"
+  - item_id: F2
+    bloc_id: X
+    question: "Je laisse souvent ma curiosité me guider"
+  - item_id: F1
+    bloc_id: X
+    question: "J’aime faire mes propres choix"
+  - item_id: P3
+    bloc_id: X
+    question: "J'aime partager mes connaissances"
+  - item_id: P1
+    bloc_id: X
+    question: "J'aime aider les autres dans des domaines qui sont nouveaux pour eux"
+  - item_id: P2
+    bloc_id: X
+    question: "J'aime aider les autres"
+  - item_id: P4
+    bloc_id: X
+    question: "Je suis content.e quand les autres le sont"
+  - item_id: R3
+    bloc_id: X
+    question: "J'aime être récompensé pour mes efforts"
+  - item_id: R4
+    bloc_id: X
+    question: "Je suis prêt à faire des efforts si la récompense est suffisante"
+  - item_id: R1
+    bloc_id: X
+    question: "J'aime les compétitions avec un prix à la clé"
+  - item_id: R2
+    bloc_id: X
+    question: "Je suis motivé par les récompenses"
+  - item_id: S4
+    bloc_id: X
+    question: "J'aime les activités de groupe"
+  - item_id: S1
+    bloc_id: X
+    question: "J’aime interagir avec les autres"
+  - item_id: S2
+    bloc_id: X
+    question: "J’ai besoin d’appartenir à un groupe"
+  - item_id: S3
+    bloc_id: X
+    question: "J'aime faire partie d'une équipe"
+
+
+# --- infos questionnaire sequencing
+SEQUENCE:
+    bloc_order:     #(str) order of bloc presentation, can be left empty (just one bloc), 'ordered' (following order of bloc_ids in this file) or 'random'
+
+
+# --- infos score calculation
+SCORES:
+  - score_id: philanthropist # (str) name of the psychometric score / dimension
+    calculation: P1+P2+P3+P4  # (str) math expression using item ids (e.g., 2*A - 4*B + 1.5C )
+    notes:                    # (str) any relevant information (can be left empty)
+  - score_id: socialiser
+    calculation: S1+S2+S3+S4
+    notes:
+  - score_id: free_spirit
+    calculation: F1+F2+F3+F4
+    notes:
+  - score_id: achiever
+    calculation: A1+A2+A3+A4
+    notes:
+  - score_id: disruptor
+    calculation: D1+D2+D3+D4
+    notes:
+  - score_id: player
+    calculation: R1+R2+R3+R4
+    notes:

@@ -1,0 +1,5 @@
+les metadonnées pour la scène esthétique n'ont pas été enregistrées suite à un crash: possibilité d'utiliser les timestamps de suivi oculaire des scènes pour retrouver le début de l'enregistrement
+Signal sonore bien pour guider
+Scènes narratif et objectif préférées
+Décors qui bougent avec le joueur (herbes qui se baissent quand on se baisse)
+Aspect objectif ressenti sur la scène narratif (avec les signaux sonores)

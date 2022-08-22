@@ -1,0 +1,3 @@
+timestamp,ticksSince1970 (100ns),scene,duration,nbTrackedObjects,nbEvents,trackingScripts
+21-06-11-11-01-15,16234092759101935,Tutorial,00:01:06.1803687,17,1,
+21-06-11-11-02-27,16234093479167865,HouseObjectives,00:11:08.0794325,147,0,

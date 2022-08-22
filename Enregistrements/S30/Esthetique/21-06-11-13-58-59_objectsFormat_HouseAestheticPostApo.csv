@@ -1,0 +1,14 @@
+objectId,trackedData,position,rotation,camera,trackingRate,replayGameObject,replayScripts
+0,/Player/SteamVRObjects/VRCamera,True,True,True,100,/Expe Recorder/VRCameraModel,ShowCameraFrustum|GazeManager
+1,/Player/SteamVRObjects/LeftHand/LeftRenderModel Slim(Clone),True,True,False,100,/LeftRenderModel Slim,
+2,/Player/SteamVRObjects/RightHand/RightRenderModel Slim(Clone),True,True,False,100,/RightRenderModel Slim,
+3,/Expe Recorder/Eye,True,True,False,100,/Expe Recorder/Eye,ShowGaze
+4,/AbandonedProps/Prop_Vase_B (1),True,True,False,100,,
+5,/AbandonedProps/Prop_Chair_A (2),True,True,False,100,,
+6,/AbandonedProps/Flashlight,True,True,False,100,,
+7,/AbandonedProps/Prop_Chair_A,True,True,False,100,,
+8,/AbandonedProps/Prop_Vase_A,True,True,False,100,,
+9,/AbandonedProps/Prop_Vase_A (1),True,True,False,100,,
+10,/AbandonedProps/Prop_Chair_A (1),True,True,False,100,,
+11,/AbandonedProps/Prop_Chair_A (3),True,True,False,100,,
+12,/AbandonedProps/Prop_Vase_B,True,True,False,100,,

@@ -1,0 +1,130 @@
+
+
+
+# --- metadata information about the questionnaire
+META:
+  title: FPT        # (str) short name / abbreviation of the questionnaire
+  fullName: Five Player Traits FR   # (str) full name of the questionnaire
+  reference:          
+    - "Tondello, G. F., Arrambide, K., Ribeiro, G., Cen, A. J. L., and Nacke, L. E. (2019, September). I dont fit into a single type : A Trait Model and Scale of Game Playing Preferences. In IFIP Conference on Human-Computer Interaction (pp. 375-395). Springer, Cham."
+    - "Additional information: http://hcigames.com/player-traits/"
+  version: 1.0       
+
+# --- infos questionnaire blocs
+BLOCS:
+  - bloc_id: X               # (str) id of this bloc
+    item_order : random  # (str) item orders within that bloc, can be 'ordered' (following item index) or 'random'
+    instructions: "Tes traits en tant que joueu(r)se.
+    Lis attentivement les phrases suivantes.
+    Indique à quel point chacune d’elle te correspond en cochant la case appropriée :"
+    scale: lickert-7      # (str) type of scale for all items in this bloc, can be 'text_free, 'text_choice', 'lickert-n', 'continuous_slider', 'image_choice', etc. (to be implemented)
+    scale_legend:         
+      - pas du tout d’accord
+      - très peu d’accord
+      - un peu d’accord
+      - moyennement d’accord
+      - assez d’accord
+      - fortement d’accord
+      - tout à fait d’accord
+
+# --- infos questionnaire items
+ITEMS:
+  - item_id: S1       # (str) item id
+    bloc_id: X         # (str) bloc id
+    question: "J’aime interagir avec d’autres personnes dans un jeu." # (str) name of scene or questionaire, can be a single item (itemX), or an item list [itemY, itemX]
+  - item_id: S2
+    bloc_id: X
+    question: "Je préfère souvent jouer tout seul."
+  - item_id: S3
+    bloc_id: X
+    question: "Je n’aime pas jouer avec d’autres personnes/joueurs."
+  - item_id: S4
+    bloc_id: X
+    question: "J’aime jouer en ligne avec d’autres joueurs."
+  - item_id: S5
+    bloc_id: X
+    question: "J’aime les jeux où je peux jouer en équipe ou au sein d’une guilde."
+  - item_id: A1
+    bloc_id: X
+    question: "J’aime les jeux qui me donnent l’impression d’être dans un lieu différent."
+  - item_id: A2
+    bloc_id: X
+    question: "J’aime les jeux avec des mondes ou univers détaillés à explorer."
+  - item_id: A3
+    bloc_id: X
+    question: "Je me sens souvent en admiration devant les paysages ou d’autres éléments visuels du jeu."
+  - item_id: A4
+    bloc_id: X
+    question: "J’aime personnaliser l’apparence de mon personnage."
+  - item_id: A5
+    bloc_id: X
+    question: "J’aime passer du temps à explorer le monde du jeu."
+  - item_id: N1
+    bloc_id: X
+    question: "J’aime les histoires complexes dans un jeu."
+  - item_id: N2
+    bloc_id: X
+    question: "J’aime les jeux où je peux me plonger dans l’histoire."
+  - item_id: N3
+    bloc_id: X
+    question: "J’ai l’habitude de sauter l’histoire où les cinématiques lorsque je joue."
+  - item_id: N4
+    bloc_id: X
+    question: "J’ai l’impression que l’histoire m’empêche souvent de vraiment jouer."
+  - item_id: N5
+    bloc_id: X
+    question: "L’histoire n’est pas importante quand je joue."
+  - item_id: C1
+    bloc_id: X
+    question: "J’apprécie les défis très difficiles dans les jeux."
+  - item_id: C2
+    bloc_id: X
+    question: "Je joue souvent aux modes de jeux les plus difficiles."
+  - item_id: C3
+    bloc_id: X
+    question: "J’aime quand les jeux me mettent au défi."
+  - item_id: C4
+    bloc_id: X
+    question: "J’aime quand la progression dans un jeu requiert des compétences."
+  - item_id: C5
+    bloc_id: X
+    question: "J’aime quand les objectifs sont difficiles à atteindre dans les jeux."
+  - item_id: G1
+    bloc_id: X
+    question: "D’habitude je me fiche de finir tous les objectifs optionnels d’un jeu."
+  - item_id: G2
+    bloc_id: X
+    question: "Je me sens stressé(e) si je ne termine pas tous les objectifs d’un jeu."
+  - item_id: G3
+    bloc_id: X
+    question: "J’aime finir toutes les tâches et objectifs d’un jeu."
+  - item_id: G4
+    bloc_id: X
+    question: "J’aime finir les jeux à 100%."
+  - item_id: G5
+    bloc_id: X
+    question: "J’aime finir les quêtes."
+
+
+# --- infos questionnaire sequencing
+SEQUENCE:
+    bloc_order:      #(str) order of bloc presentation, can be left empty (just one bloc), 'ordered' (following order in this file) or 'random'
+
+
+# --- infos score calculation
+SCORES:
+  - score_id: social # (str) name of the psychometric score / dimension
+    calculation: S1-S2-S3+S4+S5  # (str) math expression using item ids (e.g., 2*A - 4*B + 1.5C )
+    notes:                    # (str) any relevant information (can be left empty)
+  - score_id: aesthetic
+    calculation: A1+A2+A3+A4+A5
+    notes:
+  - score_id: narrative
+    calculation: N1+N2-N3-N4-N5
+    notes:
+  - score_id: challenge
+    calculation: C1+C2+C3+C4+C5
+    notes:
+  - score_id: goal
+    calculation: -G1+G2+G3+G4+G5
+    notes:

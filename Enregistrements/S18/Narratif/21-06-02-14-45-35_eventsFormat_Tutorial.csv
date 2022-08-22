@@ -1,0 +1,4 @@
+id,event
+0,HeadsetRemoved
+1,HeadsetMounted
+2,SceneLoad:HouseNarrative

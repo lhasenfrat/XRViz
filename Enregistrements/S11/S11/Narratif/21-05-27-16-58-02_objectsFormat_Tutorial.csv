@@ -1,0 +1,18 @@
+objectId,trackedData,position,rotation,camera,trackingRate,replayGameObject,replayScripts
+0,/Player/SteamVRObjects/VRCamera,True,True,True,100,/Expe Recorder/VRCameraModel,ShowCameraFrustum|GazeManager
+1,/Player/SteamVRObjects/LeftHand/LeftRenderModel Slim(Clone),True,True,False,100,/LeftRenderModel Slim,
+2,/Player/SteamVRObjects/RightHand/RightRenderModel Slim(Clone),True,True,False,100,/RightRenderModel Slim,
+3,/Expe Recorder/Eye,True,True,False,100,/Expe Recorder/Eye,ShowGaze
+4,/Throwing/Parent to hand/Throwable (from hand velocities),True,True,False,100,,
+5,/Throwing/Parent to hand/Throwable (from hand velocities),True,True,False,100,,
+6,/Throwing/Parent to hand/Throwable (from hand velocities),True,True,False,100,,
+7,/Throwing/Parent to hand/Throwable (from hand velocities),True,True,False,100,,
+8,/Throwing/Parent to hand/Throwable (from hand velocities),True,True,False,100,,
+9,/Throwing/Parent to hand/Throwable (from hand velocities),True,True,False,100,,
+10,/Throwing/Parent to hand/Throwable (from hand velocities),True,True,False,100,,
+11,/Throwing/Parent to hand/Throwable (from hand velocities),True,True,False,100,,
+12,/Throwing/Parent to hand/Throwable (from hand velocities),True,True,False,100,,
+13,/Throwing/Parent to hand/Throwable (from hand velocities),True,True,False,100,,
+14,/Throwing/Parent to hand/Throwable (from hand velocities),True,True,False,100,,
+15,/Throwing/Parent to hand/Throwable (from hand velocities),True,True,False,100,,
+16,/Door,True,True,False,100,,

@@ -1,0 +1,140 @@
+<b>[SteamVR]</b> Initialized. Connected to lighthouse : VIVE_Pro MV : LHR-47E63857 :: vive_pro
+<b>[SteamVR Interaction]</b> ChaperoneInfo initialized. Roomscale play area 4.00m x 3.10m
+SetEyeParameter: NOT_INITIAL
+sensitive_factor: 1
+[SRanipal] Initial Eye v2 success!
+<b>SteamVR Interaction System</b> Headset placed on head
+Session folder = C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E
+now = 5/27/2021 3:28:55 PM, elapsedTicks (100ns) = 16221293358561716
+Started recording objects format to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-28-55_objectsFormat_Tutorial.csv
+Started recording events format to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-28-55_eventsFormat_Tutorial.csv
+Started recording objects data to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-28-55_objectsData_Tutorial.csv
+Started recording events data to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-28-55_eventsData_Tutorial.csv
+The tree Gas_Planet_D must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+Stopping Recording
+Recording Stopped and all data written to disk.
+Session folder = C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E
+now = 5/27/2021 3:29:04 PM, elapsedTicks (100ns) = 16221293442544409
+Couldn't find object /Player/SteamVRObjects/LeftHand/LeftRenderModel Slim(Clone), you can hot-plug it during the recording.
+Couldn't find object /Player/SteamVRObjects/RightHand/RightRenderModel Slim(Clone), you can hot-plug it during the recording.
+Started recording objects format to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-29-04_objectsFormat_HouseAestheticBase.csv
+Started recording events format to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-29-04_eventsFormat_HouseAestheticBase.csv
+Started recording objects data to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-29-04_objectsData_HouseAestheticBase.csv
+Started recording events data to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-29-04_eventsData_HouseAestheticBase.csv
+SetEyeParameter: WORK
+sensitive_factor: 1
+/Player/SteamVRObjects/LeftHand/LeftRenderModel Slim(Clone) was found, now tracking it.
+/Player/SteamVRObjects/RightHand/RightRenderModel Slim(Clone) was found, now tracking it.
+Material 'Portal' with Shader 'Shader Graphs/Portal' doesn't have a texture property '_MainTex'
+A multisampled texture being bound to a non-multisampled sampler. Disabling in order to avoid undefined behavior. Please use Texture2DMS in the shader.
+A multisampled texture being bound to a non-multisampled sampler. Disabling in order to avoid undefined behavior. Please use Texture2DMS in the shader.
+Stopping Recording
+Recording Stopped and all data written to disk.
+Session folder = C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E
+now = 5/27/2021 3:31:40 PM, elapsedTicks (100ns) = 16221295003460825
+Couldn't find object /Player/SteamVRObjects/LeftHand/LeftRenderModel Slim(Clone), you can hot-plug it during the recording.
+Couldn't find object /Player/SteamVRObjects/RightHand/RightRenderModel Slim(Clone), you can hot-plug it during the recording.
+Started recording objects format to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-31-40_objectsFormat_HouseAestheticSpace.csv
+Started recording events format to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-31-40_eventsFormat_HouseAestheticSpace.csv
+Started recording objects data to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-31-40_objectsData_HouseAestheticSpace.csv
+Started recording events data to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-31-40_eventsData_HouseAestheticSpace.csv
+SetEyeParameter: WORK
+sensitive_factor: 1
+/Player/SteamVRObjects/LeftHand/LeftRenderModel Slim(Clone) was found, now tracking it.
+/Player/SteamVRObjects/RightHand/RightRenderModel Slim(Clone) was found, now tracking it.
+A multisampled texture being bound to a non-multisampled sampler. Disabling in order to avoid undefined behavior. Please use Texture2DMS in the shader.
+A multisampled texture being bound to a non-multisampled sampler. Disabling in order to avoid undefined behavior. Please use Texture2DMS in the shader.
+The tree TreeCreator_Tall_C_Dead must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+The tree TreeCreator_Tall_A must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+The tree TreeCreator_Tall_A must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+Stopping Recording
+Recording Stopped and all data written to disk.
+Session folder = C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E
+now = 5/27/2021 3:33:17 PM, elapsedTicks (100ns) = 16221295975520955
+Couldn't find object /Player/SteamVRObjects/LeftHand/LeftRenderModel Slim(Clone), you can hot-plug it during the recording.
+Couldn't find object /Player/SteamVRObjects/RightHand/RightRenderModel Slim(Clone), you can hot-plug it during the recording.
+Started recording objects format to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-33-17_objectsFormat_HouseAestheticPostApo.csv
+Started recording events format to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-33-17_eventsFormat_HouseAestheticPostApo.csv
+Started recording objects data to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-33-17_objectsData_HouseAestheticPostApo.csv
+Started recording events data to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-33-17_eventsData_HouseAestheticPostApo.csv
+SetEyeParameter: WORK
+sensitive_factor: 1
+/Player/SteamVRObjects/LeftHand/LeftRenderModel Slim(Clone) was found, now tracking it.
+/Player/SteamVRObjects/RightHand/RightRenderModel Slim(Clone) was found, now tracking it.
+A multisampled texture being bound to a non-multisampled sampler. Disabling in order to avoid undefined behavior. Please use Texture2DMS in the shader.
+A multisampled texture being bound to a non-multisampled sampler. Disabling in order to avoid undefined behavior. Please use Texture2DMS in the shader.
+The tree Gas_Planet_D must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+Cannot set the parent of the GameObject 'Flashlight' while it is being destroyed.
+NullReferenceException: Object reference not set to an instance of an object
+Stopping Recording
+Recording Stopped and all data written to disk.
+Session folder = C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E
+now = 5/27/2021 3:35:55 PM, elapsedTicks (100ns) = 16221297554022309
+Couldn't find object /Player/SteamVRObjects/LeftHand/LeftRenderModel Slim(Clone), you can hot-plug it during the recording.
+Couldn't find object /Player/SteamVRObjects/RightHand/RightRenderModel Slim(Clone), you can hot-plug it during the recording.
+Started recording objects format to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-35-55_objectsFormat_HouseAestheticBase.csv
+Started recording events format to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-35-55_eventsFormat_HouseAestheticBase.csv
+Started recording objects data to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-35-55_objectsData_HouseAestheticBase.csv
+Started recording events data to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-35-55_eventsData_HouseAestheticBase.csv
+SetEyeParameter: WORK
+sensitive_factor: 1
+/Player/SteamVRObjects/LeftHand/LeftRenderModel Slim(Clone) was found, now tracking it.
+/Player/SteamVRObjects/RightHand/RightRenderModel Slim(Clone) was found, now tracking it.
+Material 'Portal' with Shader 'Shader Graphs/Portal' doesn't have a texture property '_MainTex'
+A multisampled texture being bound to a non-multisampled sampler. Disabling in order to avoid undefined behavior. Please use Texture2DMS in the shader.
+A multisampled texture being bound to a non-multisampled sampler. Disabling in order to avoid undefined behavior. Please use Texture2DMS in the shader.
+Cannot set the parent of the GameObject 'Left' while it is being destroyed.
+NullReferenceException: Object reference not set to an instance of an object
+Stopping Recording
+Recording Stopped and all data written to disk.
+Session folder = C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E
+now = 5/27/2021 3:40:00 PM, elapsedTicks (100ns) = 16221300001003867
+Couldn't find object /Player/SteamVRObjects/LeftHand/LeftRenderModel Slim(Clone), you can hot-plug it during the recording.
+Couldn't find object /Player/SteamVRObjects/RightHand/RightRenderModel Slim(Clone), you can hot-plug it during the recording.
+Started recording objects format to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-40-00_objectsFormat_HouseAestheticSpace.csv
+Started recording events format to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-40-00_eventsFormat_HouseAestheticSpace.csv
+Started recording objects data to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-40-00_objectsData_HouseAestheticSpace.csv
+Started recording events data to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-40-00_eventsData_HouseAestheticSpace.csv
+SetEyeParameter: WORK
+sensitive_factor: 1
+/Player/SteamVRObjects/LeftHand/LeftRenderModel Slim(Clone) was found, now tracking it.
+/Player/SteamVRObjects/RightHand/RightRenderModel Slim(Clone) was found, now tracking it.
+A multisampled texture being bound to a non-multisampled sampler. Disabling in order to avoid undefined behavior. Please use Texture2DMS in the shader.
+A multisampled texture being bound to a non-multisampled sampler. Disabling in order to avoid undefined behavior. Please use Texture2DMS in the shader.
+The tree TreeCreator_Tall_C_Dead must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+The tree TreeCreator_Tall_A must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+The tree TreeCreator_Tall_A must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+Stopping Recording
+Recording Stopped and all data written to disk.
+Session folder = C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E
+now = 5/27/2021 3:43:11 PM, elapsedTicks (100ns) = 16221301911024085
+Couldn't find object /Player/SteamVRObjects/LeftHand/LeftRenderModel Slim(Clone), you can hot-plug it during the recording.
+Couldn't find object /Player/SteamVRObjects/RightHand/RightRenderModel Slim(Clone), you can hot-plug it during the recording.
+Started recording objects format to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-43-11_objectsFormat_HouseAestheticPostApo.csv
+Started recording events format to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-43-11_eventsFormat_HouseAestheticPostApo.csv
+Started recording objects data to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-43-11_objectsData_HouseAestheticPostApo.csv
+Started recording events data to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-43-11_eventsData_HouseAestheticPostApo.csv
+SetEyeParameter: WORK
+sensitive_factor: 1
+/Player/SteamVRObjects/LeftHand/LeftRenderModel Slim(Clone) was found, now tracking it.
+/Player/SteamVRObjects/RightHand/RightRenderModel Slim(Clone) was found, now tracking it.
+A multisampled texture being bound to a non-multisampled sampler. Disabling in order to avoid undefined behavior. Please use Texture2DMS in the shader.
+A multisampled texture being bound to a non-multisampled sampler. Disabling in order to avoid undefined behavior. Please use Texture2DMS in the shader.
+The tree Gas_Planet_D must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+Stopping Recording
+Recording Stopped and all data written to disk.
+Session folder = C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E
+now = 5/27/2021 3:46:58 PM, elapsedTicks (100ns) = 16221304187526702
+Couldn't find object /Player/SteamVRObjects/LeftHand/LeftRenderModel Slim(Clone), you can hot-plug it during the recording.
+Couldn't find object /Player/SteamVRObjects/RightHand/RightRenderModel Slim(Clone), you can hot-plug it during the recording.
+Started recording objects format to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-46-58_objectsFormat_HouseAestheticBase.csv
+Started recording events format to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-46-58_eventsFormat_HouseAestheticBase.csv
+Started recording objects data to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-46-58_objectsData_HouseAestheticBase.csv
+Started recording events data to C:/Users/cabezas/Documents/ExpeRecorder\Recordings\ExpeSophie\S13_1_E\21-05-27-15-46-58_eventsData_HouseAestheticBase.csv
+SetEyeParameter: WORK
+sensitive_factor: 1
+/Player/SteamVRObjects/LeftHand/LeftRenderModel Slim(Clone) was found, now tracking it.
+/Player/SteamVRObjects/RightHand/RightRenderModel Slim(Clone) was found, now tracking it.
+Material 'Portal' with Shader 'Shader Graphs/Portal' doesn't have a texture property '_MainTex'
+A multisampled texture being bound to a non-multisampled sampler. Disabling in order to avoid undefined behavior. Please use Texture2DMS in the shader.
+A multisampled texture being bound to a non-multisampled sampler. Disabling in order to avoid undefined behavior. Please use Texture2DMS in the shader.

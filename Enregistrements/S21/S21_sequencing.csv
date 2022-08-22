@@ -1,0 +1,13 @@
+step_index,element,order,item,dir_path
+1,questionnaires,ordered,demographics,Enregistrements\S21\profiling\S21_answers_demographics.csv
+1,questionnaires,ordered,FPT,Enregistrements\S21\profiling\S21_answers_FPT.csv
+1,questionnaires,ordered,gaming,Enregistrements\S21\profiling\S21_answers_gaming.csv
+2,condition,latin_square,Goals,Enregistrements\S21\Goals
+2b,questionnaires,ordered,DFS_Goals,Enregistrements\S21\profiling\S21_answers_DFS_Goals.csv
+2b,questionnaires,ordered,TPI_Goals,Enregistrements\S21\profiling\S21_answers_TPI_Goals.csv
+2,condition,latin_square,Narrative,Enregistrements\S21\Narrative
+2b,questionnaires,ordered,DFS_Narrative,Enregistrements\S21\profiling\S21_answers_DFS_Narrative.csv
+2b,questionnaires,ordered,TPI_Narrative,Enregistrements\S21\profiling\S21_answers_TPI_Narrative.csv
+2,condition,latin_square,Aesthetic,Enregistrements\S21\Aesthetic
+2b,questionnaires,ordered,DFS_Aesthetic,Enregistrements\S21\profiling\S21_answers_DFS_Aesthetic.csv
+2b,questionnaires,ordered,TPI_Aesthetic,Enregistrements\S21\profiling\S21_answers_TPI_Aesthetic.csv

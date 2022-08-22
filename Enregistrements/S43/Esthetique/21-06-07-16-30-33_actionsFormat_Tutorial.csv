@@ -1,0 +1,6 @@
+ActionId,ActionName,NbParam,Param1,Param2,Param3,Param4,Param5,Param6,Param7,Param8,Param9
+1,Teleport,6,StartPosition X,StartPosition Y,StartPosition Z,EndPosition X,EndPosition Y,EndPosition Z
+2,Turn,2,Activated,Direction
+3,Hover,3,Activated,Interactable(objectId),distanceToInteractable
+4,Select,3,Activated,Interactable(objectId),distanceToInteractable
+5,EnterSpace,1,Space(objectId)

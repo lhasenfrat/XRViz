@@ -1,0 +1,63 @@
+PROFILING:
+  demographics:
+    age:
+      type: numeric_range
+      from: 18
+      to: 27
+    gender:
+      type: string_list
+      list:
+        - Homme
+        - Femme
+        - Autre
+        - Ne se prononce pas
+  experimental:
+    condition:
+      type: string_list
+      list:
+        - Aesthetic
+        - Narrative
+        - Goals
+    passation_site:
+      type: string_list
+      list:
+        - INSA Lyon
+        - ENISE (Saint-Etienne)
+  gaming:
+    videogame_practice:
+      type: string_list
+      list:
+        - Régulièrement
+        - Occasionnellement
+        - Tous les jours
+        - Jamais
+  TPI_scores:
+    engagement:
+      type: numeric_range
+      from: 3
+      to: 7
+  FPT_scores:
+    social:
+      type: numeric_range
+      from: 0
+      to: 100
+    aesthetic:
+      type: numeric_range
+      from: 0
+      to: 100
+    challenge:
+      type: numeric_range
+      from: 0
+      to: 100
+    narrative:
+      type: numeric_range
+      from: 0
+      to: 100
+    goal:
+      type: numeric_range
+      from: 0
+      to: 100
+
+
+    
+    

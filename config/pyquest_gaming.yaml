@@ -1,0 +1,71 @@
+# *****************
+# This .yaml config file contains all information for the presentation and
+# and analysis of a questionnaire during an experiment :
+# - metadata information  (title, refs, version, etc.)
+# - blocs / items info and sequencing info (content of the questionnaire for presentation)
+# - score information:
+#
+# Format:
+# questionnaires are organized as follows:
+# - bloc X
+#   - instructions bloc X
+#   - items A, B, C
+# - bloc Y
+#   - instructions bloc Y
+#   - items D, E, F, G
+# - ...
+#
+# each bloc defines a set of items / questions with given instructions and scale.
+# bloc order can be set or randomized, same applied for items order within bloc.
+# # Notes:
+#   /!\ YAML config files use Python-like indentations to represent levels in data,
+#   therefore you should pay special attention to spaces !
+# *****************
+
+
+# --- metadata information about the questionnaire
+META:
+  title: gaming                  # (str) short name / abbreviation of the questionnaire
+  fullName: gaming exerience  # (str) full name of the questionnaire
+  reference:                  # list of references for this questionnaire
+    -
+  version: 1.0        # version tag for retrocompatibility
+
+# --- infos questionnaire blocs
+BLOCS:
+  - bloc_id: X   # (str) id of this bloc
+    item_order : ordered  # (str) item orders within that bloc, can be 'ordered' (following item index) or 'random'
+    instructions:
+    scale: lickert-3 # (str) type of scale for all items in this bloc, can be 'text_free, 'text_choice', 'lickert-n', 'continuous_slider', 'image_choice', etc. (to be implemented)
+    scale_legend:
+      - "Débutant(e) : Je n'ai jamais (ou très peu) utilisé la réalité virtuelle"
+      - "Initié(e) : J'ai déjà utilisé la réalité virtuelle plusieurs fois"
+      - "Expert(e) : Je suis développeur(se) et/ou chercheur(se) en réalité virtuelle"
+     # (str list) legend for each step of the scale (list with length n, can have empty elements)
+  - bloc_id: Y
+    item_order : ordered
+    instructions:
+    scale: lickert-4
+    scale_legend:
+      - "jamais"
+      - "occasionnellement"
+      - "régulièrement"
+      - "tous les jours"
+
+# --- infos questionnaire items
+ITEMS:
+  - item_id: vr_mastery       # (str) item index
+    bloc_id: X         # (str) bloc index
+    question: "Quel est ton niveau de maitrise de la réalité virtuelle?" # (str) name of scene or questionaire, can be a single item (itemX), or an item list [itemY, itemX]
+  - item_id: videogame_practice
+    bloc_id: Y
+    question: "À quelle fréquence joues-tu aux jeux-vidéos?"
+
+
+# --- infos questionnaire sequencing
+SEQUENCE:
+  bloc_order: ordered     #(str) order of bloc presentation, can be left empty (just one bloc), can be 'ordered' (following order in this file) or 'random'
+
+
+# --- infos score calculation
+SCORES:

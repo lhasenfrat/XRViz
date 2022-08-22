@@ -1,0 +1,81 @@
+# *****************
+# This .yaml config file contains all information for the presentation and
+# analysis of a questionnaire during an experiment :
+# - metadata information  (title, refs, version, etc.)
+# - blocs / items info and sequencing info (content of the questionnaire for presentation)
+# - score information:
+#
+# Format:
+# questionnaires are organized as follows:
+# - bloc X
+#   - instructions bloc X
+#   - items A, B, C
+# - bloc Y
+#   - instructions bloc Y
+#   - items D, E, F, G
+# - ...
+#
+# each bloc defines a set of items / questions with given instructions and scale.
+# bloc order can be set or randomized, same applied for items order within bloc.
+# # Notes:
+#   /!\ YAML config files use Python-like indentations to represent levels in data,
+#   therefore you should pay special attention to spaces !
+# *****************
+
+# --- metadata information about the questionnaire
+META:
+  title: TPI        # (str) short name / abbreviation of the questionnaire
+  fullName: Temple Presence Inventory  # (str) full name of the questionnaire
+  reference:          # list of references for this questionnaire
+    - "Lombard, M., Weinstein, L., & Ditton, T. B. (2011). Measuring telepresence: The validity of the Temple Presence Inventory (TPI) in a gaming context. Presented at the 2011 annual conference of the International Society for Presence Research (ISPR), Edinburgh, Scotland."
+    - "Lombard, M., Ditton, T. B., & Weinstein, L. (2009, November). Measuring (tele)presence: The Temple Presence Inventory. Presented at the Twelfth International Workshop on Presence, Los Angeles, California, USA."
+    - "Lombard, M., & Ditton, T. B., Crane, D., Davis, B., Gil-Egui, G., Horvath, K., Rossman, J., & Park, S. (2000). Measuring presence: A literature-based approach to the development of a standardized paper-and-pencil instrument. Presented at the Third International Workshop on Presence, Delft, The Netherlands."
+  version: 1.0        # version tag for retrocompatibility
+
+# --- infos questionnaire blocs
+BLOCS:
+  - bloc_id: X               # (str) id of this bloc
+    item_order : random  # (str) item orders within that bloc, can be 'ordered' (following item index) or 'random'
+    instructions: "Ton immersion dans le jeu.
+    Lis attentivement les phrases suivantes.
+    Indique à quel point chacune d’elle te correspond en cochant la case appropriée :"
+    scale: lickert-7      # (str) type of scale for all items in this bloc, can be 'text_free, 'text_choice', 'lickert-n', 'continuous_slider', 'image_choice', etc. (to be implemented)
+    scale_legend:         # (str list) legend for each step of the scale (list with length n, can have empty elements)
+      - pas du tout d’accord
+      - très peu d’accord
+      - un peu d’accord
+      - moyennement d’accord
+      - assez d’accord
+      - fortement d’accord
+      - tout à fait d’accord
+
+# --- infos questionnaire items
+ITEMS:
+  - item_id: E1       # (str) item id
+    bloc_id: X         # (str) bloc id
+    question: "Je me suis senti(e) mentalement immergé(e) dans l'expérience." # (str) name of scene or questionaire, can be a single item (itemX), or an item list [itemY, itemX]
+  - item_id: E2
+    bloc_id: X
+    question: "Je me suis senti(e) impliqué(e) dans cette expérience."
+  - item_id: E3
+    bloc_id: X
+    question: "Mes sens ont été sollicités."
+  - item_id: E4
+    bloc_id: X
+    question: "J'ai ressenti une sensation de réalisme."
+  - item_id: E5
+    bloc_id: X
+    question: "Cette expérience a été relaxante ou bien excitante."
+  - item_id: E6
+    bloc_id: X
+    question: "L'histoire m'a intéressé."
+
+# --- infos questionnaire sequencing
+SEQUENCE:
+    bloc_order:     #(str) order of bloc presentation, can be left empty (just one bloc), can be 'ordered' (following order in this file) or 'random'
+
+# --- infos score calculation
+SCORES:
+  - score_id: engagement # (str) name of the psychometric score / dimension
+    calculation: (1/6)*(E1+E2+E3+E4+E5+E6)  # (str) math expression using item ids (e.g., (1/3)*(E1 + 2*E2 - 4*E3) + 2
+    notes: "dimension d'engagement / immersion mentale"                    # (str) any relevant information (can be left empty)
