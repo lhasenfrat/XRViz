@@ -16,8 +16,35 @@ import seaborn as sns
 import yaml
 from questionnaire import *
 
+def loadConfigPaths(pathFile):
+    '''
+        Loads paths of all relevants files for the experiment
 
+        Parameters
+        ----------
+        pathsFile : pathlib.Path
+            path of the .yaml paths file.
 
+        Returns
+        -------
+        params : dict
+            contains paths of the experiement descrition, the criteria list and the data used for the experiment
+             '''
+    check_filePath_validity(pathFile)
+    assert pathlib.Path(pathFile).suffix.lower() == '.yaml', "experiment paths file must be .yaml format"
+
+    # --- read template config file
+    with open(pathFile, 'r') as file:
+        yamlread = yaml.full_load(file)
+
+        # --- create related fields
+    params = dict()
+    folder=pathFile.parent
+    params["configExperiment"] = folder.joinpath(yamlread['DESIGN'])
+    params["configCriteria"] = folder.joinpath(yamlread['CRITERIAS'])
+    params["dataPath"] = folder.joinpath(yamlread['DATA'])
+    params["profilingFile_Sophie"] = folder.joinpath(yamlread['PROFILING'])
+    return params
 def loadConfigExperiment(configFile):
     '''
     Loads informations related to experiment structure from config file

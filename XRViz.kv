@@ -1,0 +1,390 @@
+MyScreenManager:
+    ConfigurationScreen:
+    SelectionScreen:
+    VisualizationScreen:
+
+<CustomPopup@Popup>:
+    auto_dismiss: False
+    size_hint:[0.7,0.7]
+
+    BoxLayout:
+        orientation:'vertical'
+        AnchorLayout:
+            anchor_x:'left'
+            size_hint_y:0.2
+            BoxLayout:
+                size_hint_x:0.7
+                orientation:'horizontal'
+                id:buttonbox
+                Label:
+                    text:'Add the Following Criteria :'
+                DropDownButton:
+                    id:criteria_categorie_button
+                    text:
+                        'Select the categorie'
+                DropDownButton:
+                    id:criteria_item_button
+                    text:
+                        'Select the criteria to add'
+
+        BoxLayout:
+            id:filterbox
+
+        BoxLayout:
+            orientation:'horizontal'
+            size_hint_y:0.1
+            id:popupbuttons
+            Button:
+                text: 'Abandon'
+                on_release: root.dismiss()
+
+<MetricsGraph@ExcludedBoxLayout>:
+    orientation:'vertical'
+    AnchorLayout:
+        anchor_x:'left'
+        size_hint_y:0.1
+        BoxLayout:
+            size_hint_x:0.5
+            orientation:'horizontal'
+            DropDownButton:
+                text:'TPI_scores'
+                id:profiling_categorie_y
+            DropDownButton:
+                text:'engagement'
+                id:profiling_item_y
+    BoxLayout:
+        id: vizualisationgraph
+    AnchorLayout:
+        anchor_x:'right'
+        size_hint_y:0.1
+        BoxLayout:
+            size_hint_x:0.5
+            orientation:'horizontal'
+            DropDownButton:
+                text:'demographics'
+                id:profiling_categorie_x
+            DropDownButton:
+                text:'age'
+                id:profiling_item_x
+
+<FromToBox@BoxLayout>:
+    BoxLayout:
+        orientation:'horizontal'
+        Label:
+            text:'From'
+
+        AnchorLayout:
+            anchor_x:'center'
+            Button:
+                size_hint:[0.7,0.2]
+                id:frombutton
+                text:'select'
+        Label:
+            text:'To'
+        AnchorLayout:
+            anchor_x:'center'
+            Button:
+                size_hint:[0.7,0.2]
+                text:'select'
+                id:tobutton
+
+<CheckBoxListRow@BoxLayout>:
+    orientation:'horizontal'
+    CheckBox:
+        active:
+            'down'
+        id: mycheckbox
+
+    Label:
+        text:
+            'default'
+        id: mylabel
+
+<DropDownButton@Button>:
+    canvas.after:
+        Color:
+            rgba: 0.5,0.5,0.5,0.5
+        Triangle:
+            points:(self.pos[0]+self.width-self.height/2,self.pos[1],self.pos[0]+self.width,self.pos[1],self.pos[0]+self.width,self.pos[1]+self.height/2)
+<NullButton@Button>:
+    background_color: 1, 1, 1, 0
+
+<DisabledRoundButton@NullButton>:
+    canvas.before:
+        Color:
+            rgba: 0.2, 0.2, 0.2, 1
+        RoundedRectangle:
+            size: [self.height,self.height]
+            pos: self.pos
+            radius: [100]
+
+<ActiveRoundButton@NullButton>:
+    canvas.before:
+        Color:
+            rgba: 0.6, 0.6, 0.6, 1
+        RoundedRectangle:
+            size: [self.height,self.height]
+            pos: self.pos
+            radius: [100]
+
+<CurrentRoundButton@NullButton>:
+    canvas.before:
+        Color:
+            rgba: 0.95, 0.95, 0.95, 1
+        RoundedRectangle:
+            size: [self.height,self.height]
+            pos: self.pos
+            radius: [100]
+
+<ExcludedBoxLayout@BoxLayout>:
+    canvas.before:
+        Line:
+            width: 0.5
+            rectangle: self.x, self.y+1, self.width-4, self.height+4
+
+
+<Title@Label>:
+
+    font_size:20
+
+<LeftAnchorLayout@AnchorLayout>:
+    anchor_x:'left'
+<ConfigurationScreen>:
+    name: 'configuration'
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y:0.15
+            orientation: 'horizontal'
+            Label:
+                size_hint_x:0.4
+                text: 'Configuration'
+            AnchorLayout:
+                BoxLayout:
+                    size_hint:[0.9,0.7]
+                    orientation: 'horizontal'
+                    CurrentRoundButton:
+                        text:'Configuration'
+                        on_release:app.root.current='configuration'
+                    DisabledRoundButton:
+                        text:'Selection'
+                    DisabledRoundButton:
+                        text:'Visualization'
+
+        BoxLayout:
+            orientation: 'horizontal'
+            BoxLayout:
+                orientation: 'vertical'
+                ExcludedBoxLayout:
+                    orientation: 'vertical'
+                    LeftAnchorLayout:
+                        size_hint_y: 0.05
+                        Title:
+                            text: 'Select the metafile'
+                    FileChooserListView:
+                        id: filechooser
+                    AnchorLayout:
+                        size_hint_y: 0.1
+                        anchor_x:'right'
+                        Button:
+                            text: 'Load'
+                            size_hint_x:0.4
+                            on_release:
+                                root.loadMetaFile(filechooser.path, filechooser.selection)
+                AnchorLayout:
+                    size_hint_y:0.4
+                    Button:
+                        size_hint: [0.4,0.3]
+                        text:'Confirm'
+                        on_release:
+                            app.root.current='selection'
+                            app.root.transition.direction='left'
+            ExcludedBoxLayout:
+                orientation:'vertical'
+
+                LeftAnchorLayout:
+                    size_hint_y: 0.05
+                    Title:
+                        text: 'Informations'
+                BoxLayout:
+                    id : informationbox
+                    orientation:'vertical'
+                    Label:
+                        text:'None'
+<SelectionScreen>:
+    name: 'selection'
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y:0.15
+            orientation: 'horizontal'
+            Label:
+                size_hint_x:0.4
+                text: 'Selection'
+            AnchorLayout:
+                BoxLayout:
+                    size_hint:[0.9,0.7]
+                    orientation: 'horizontal'
+                    ActiveRoundButton:
+                        text:'Configuration'
+                        on_release:
+                            app.root.current='configuration'
+                            app.root.transition.direction='right'
+                    CurrentRoundButton:
+                        text:'Selection'
+                        on_release:app.root.current='selection'
+                    DisabledRoundButton:
+                        on_release:
+                            app.root.current='visualization'
+                            app.root.transition.direction='left'
+                        disabled:True
+                        id:vizualisationshortcut
+                        text:'Visualization'
+
+        BoxLayout:
+            orientation: 'horizontal'
+            ExcludedBoxLayout:
+                orientation: 'vertical'
+                BoxLayout:
+                    orientation: 'vertical'
+                    LeftAnchorLayout:
+                        size_hint_y: 0.1
+                        Title:
+                            text: 'Filters'
+                    BoxLayout:
+                        id:filtersbox
+                        orientation:'vertical'
+                    BoxLayout:
+                        size_hint_y: 0.3
+                        orientation:'horizontal'
+                        Button:
+                            size_hint_x:0.5
+                            text: 'Add Filter'
+                            on_release: root.loadPopupFilter()
+                        Button:
+                            text: 'Remove Filters'
+                            id:removefilterbutton
+                            on_release: root.removeFilters()
+                            disabled: True
+                BoxLayout:
+                    orientation: 'vertical'
+                    LeftAnchorLayout:
+                        size_hint_y: 0.1
+                        Title:
+                            text: 'Groups'
+                    BoxLayout:
+                        id:groupsbox
+
+                    BoxLayout:
+                        size_hint_y: 0.3
+                        orientation:'horizontal'
+                        Button:
+                            size_hint_x:0.5
+                            text: 'Add Group'
+                            id:addgroupbutton
+                            on_release: root.loadPopupGroup()
+
+                        Button:
+                            text: 'Remove Group'
+                            id:removegroupbutton
+                            on_release:root.resetGroup()
+                            disabled: True
+
+            BoxLayout:
+                orientation: 'vertical'
+                ExcludedBoxLayout:
+                    orientation: 'vertical'
+                    LeftAnchorLayout:
+                        size_hint_y: 0.1
+                        Title:
+                            text: 'Data summary'
+                    BoxLayout:
+                        id:databox
+                        orientation:'vertical'
+                AnchorLayout:
+                    size_hint_y:0.3
+                    Button:
+                        size_hint: [0.7,0.4]
+                        text:'Confirm'
+                        on_release:
+                            root.loadVizualisationScreen()
+            ExcludedBoxLayout:
+                orientation: 'vertical'
+                size_hint_x:2.5
+                LeftAnchorLayout:
+                    size_hint_y: 0.1
+                    Title:
+                        text: 'Graph'
+                BoxLayout:
+                    orientation:'vertical'
+                    BoxLayout:
+                        orientation:'horizontal'
+                        BoxLayout:
+                            id:graphbox
+                    AnchorLayout:
+                        anchor_x:'right'
+                        size_hint_y:0.1
+                        BoxLayout:
+                            size_hint_x:0.5
+                            orientation:'horizontal'
+                            DropDownButton:
+                                text:'demographics'
+                                id:profiling_categorie
+                            DropDownButton:
+                                text:'age'
+                                id:profiling_item
+
+
+<VisualizationScreen>:
+    name: 'visualization'
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y:0.15
+            orientation: 'horizontal'
+            Label:
+                size_hint_x:0.4
+                text: 'Visualization'
+            AnchorLayout:
+                BoxLayout:
+                    size_hint:[0.9,0.7]
+                    orientation: 'horizontal'
+                    ActiveRoundButton:
+                        text:'Configuration'
+                        on_release:
+                            app.root.current='configuration'
+                            app.root.transition.direction='right'
+                    ActiveRoundButton:
+                        text:'Selection'
+                        on_release:
+                            app.root.current='selection'
+                            app.root.transition.direction='right'
+                    CurrentRoundButton:
+                        text:'Visualization'
+                        on_release:app.root.current='visualization'
+        BoxLayout:
+            orientation:'vertical'
+            AnchorLayout:
+                size_hint_y:0.1
+                anchor_x:'left'
+                BoxLayout:
+                    size_hint_x:0.8
+                    orientation:'horizontal'
+
+                    Button:
+                        text:'Action'
+
+                        on_release:
+                            root.reloadActionsGraph()
+                    Button:
+                        text:'Metrics'
+                        on_release:
+                            root.reloadMetricsGraph()
+
+            BoxLayout:
+                orientation:'horizontal'
+                BoxLayout:
+                    id:VizualisationBox
+                ExcludedBoxLayout:
+                    size_hint_x:0.3
+                    orientation:'vertical'

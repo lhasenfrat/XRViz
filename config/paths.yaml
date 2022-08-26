@@ -1,0 +1,4 @@
+DESIGN: design_Sophie.yaml
+CRITERIAS: criteria_list.yaml
+DATA: ../Enregistrements
+PROFILING: ../Enregistrements/traits_dfs_df.csv

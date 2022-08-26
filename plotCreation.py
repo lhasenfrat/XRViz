@@ -1,6 +1,8 @@
 import pandas as pd
 import os
 import matplotlib.pyplot as pt
+from matplotlib import colors
+import matplotlib.cm as cmx
 
 gaussianParameter = 10
 
@@ -9,6 +11,12 @@ class plotCreator():
     informationQuantity = "reduced"
 
     def blendColor(self, actionmap, position, color):
+        '''
+        Blend colors when adding a for the action map (the line summing up actions for a record).
+        :param actionmap: the actionmap for the record.
+        :param position: position of the action added.
+        :param color: color of the new action.
+        '''
         actionmap[position][1] = [(actionmap[position][1][0] + color[0]) / 2,
                                   (actionmap[position][1][1] + color[1]) / 2,
                                   (actionmap[position][1][2] + color[2]) / 2]
@@ -23,31 +31,80 @@ class plotCreator():
                                               (actionmap[position + i][1][2] * i + color[2]) / (1 + i)]
 
     def hexaFormat(self, number):
+        '''
+        Translate a number into the right hexadecimal format.
+        :param number: number to translate.
+        :return: translated number.
+        '''
         hexaNumber = format(number, 'X')
         if len(hexaNumber) == 1:
             return "0" + hexaNumber
         return hexaNumber
 
-    def createProfilingPlot(self,first_axis,second_axis):
+    def createMetricsPlot(self,first_axis_name,second_axis_name,data,group_type,group_axis_name):
+        '''
+        Create the metrics plot for the visualization screen.
+        :param first_axis_name: metric of the first axis.
+        :param second_axis_name: metric of the second axis.
+        :param data: profiling data.
+        :param group_type: type of group, basically numeric or string.
+        :param group_axis_name: metric used for the grouping.
+        :return: plot.
+        '''
         pt.cla()
         pt.clf()
-        pt.hexbin(first_axis,second_axis,gridsize=20)
+        if group_type=="int64" or group_type=="float64":
+            pt.scatter(data[first_axis_name],data[second_axis_name],c=data[group_axis_name])
+            pt.colorbar(label=str(group_axis_name[0]+" : "+group_axis_name[1]))
+
+        elif group_type=="object":
+            grouplist = list(set(data[group_axis_name]))
+
+            rainbow = pt.get_cmap('tab20b')
+            cNorm = colors.Normalize(vmin=0, vmax=len(grouplist))
+            scalarMap = cmx.ScalarMappable(norm=cNorm, cmap=rainbow)
+            for i in range(len(grouplist)):
+                pt.scatter(data[data[group_axis_name]==grouplist[i]][first_axis_name],data[data[group_axis_name]==grouplist[i]][second_axis_name],color=scalarMap.to_rgba(i), label=grouplist[i])
+                pt.legend()
+        else:
+            pt.scatter(data[first_axis_name],data[second_axis_name])
         return pt
 
     def createFigure(self, size):
+        '''
+        setup of the plot.
+        :param size: number of figure.
+        '''
         self.fig, self.ax = pt.subplots(size, squeeze=False,sharex=True,sharey=True)
 
     def createAggregatedPlot(self, data,informationQuantity):
+        '''
+        create a action plot that is a list of multiple record based action plot.
+        :param data: list of action data.
+        :param informationQuantity: quantity of information displayed in the action graph. if setup to "reduced", only the action map is shown.
+        :return: plot.
+        '''
+        self.informationQuantity = informationQuantity
 
         self.createFigure(len(data))
         x=0
-        for i in range(len(data)):
+        for i in data.keys():
             self.createPlot(data[i][1],data[i][4],data[i][5],data[i][3], x)
             x += 1
         return pt
 
 
     def createPlot(self,condition, data,actionformat,objectformat, x=0):
+        '''
+        Create a action plot.
+        The action plot describe a record and every actions happening in it.
+        :param condition: condition name for the title.
+        :param data: action data.
+        :param actionformat: action format : list of action present in action data.
+        :param objectformat: object format : list of object present in object data.
+        :param x: position of the figure.
+        :return: plot.
+        '''
         objectgroups = data.groupby('ObjectId')
         if data.size==0:
             return pt
@@ -68,10 +125,10 @@ class plotCreator():
                         for i in range(len(actiongroup["timestamp"]) - 1):
                             self.ax[x, 0].axvline(list(actiongroup["timestamp"])[i], color='b')
                             self.ax[x, 0].text(
-                                (list(actiongroup["timestamp"])[i] + list(actiongroup["timestamp"])[i + 1]) / 2, -1,
+                                (list(actiongroup["timestamp"])[i] + list(actiongroup["timestamp"])[i + 1]) / 2, 0,
                                 list(actiongroup["Param1"])[i], fontsize=7)
                         self.ax[x, 0].axvline(list(actiongroup["timestamp"])[-1], color='b')
-                        self.ax[x, 0].text(list(actiongroup["timestamp"])[-1] + 0.5, -1,
+                        self.ax[x, 0].text(list(actiongroup["timestamp"])[-1] + 0.5, 0,
                                            list(actiongroup["Param1"])[-1], fontsize=7)
 
                 else:
